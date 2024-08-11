@@ -1,0 +1,32 @@
+.user-navbar div{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.user-navbar{
+    position: relative;
+    display: flex;
+    width:0px;    
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #ffffff; 
+    filter: brightness(90%);
+}
+#user-dp2{
+    margin: 10px;
+}
+.user-dp{
+    width: 50px;
+    height: 50px;
+    border: 50px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border-radius: 50px;
+}
+#dp-container2{
+    margin: 5px;
+}
+#user-navbar div a{
+    text-decoration: none;
+}
