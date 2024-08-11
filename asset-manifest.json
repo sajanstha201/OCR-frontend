@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/OCR-frontend/static/css/main.03a5ec2a.css",
+    "main.js": "/OCR-frontend/static/js/main.2696f668.js",
+    "static/js/453.2b06451f.chunk.js": "/OCR-frontend/static/js/453.2b06451f.chunk.js",
+    "static/media/concept-landing-page-transfer-concept.png": "/OCR-frontend/static/media/concept-landing-page-transfer-concept.6ac306003496a21179cc.png",
+    "static/media/copywriting-social-media-post-content-marketing-internet-commercial-cartoon-character-writing-text-advertising-promotional-strategy.png": "/OCR-frontend/static/media/copywriting-social-media-post-content-marketing-internet-commercial-cartoon-character-writing-text-advertising-promotional-strategy.9b27fdb8d8a5778d58f3.png",
+    "static/media/text-files-concept-illustration.png": "/OCR-frontend/static/media/text-files-concept-illustration.5a36ad62f6c0170cce72.png",
+    "static/media/a.png": "/OCR-frontend/static/media/a.4d2fb8e12c556a228e55.png",
+    "static/media/logo.jpg": "/OCR-frontend/static/media/logo.ef618393e6241c5963ae.jpg",
+    "static/media/documentAnalysis.png": "/OCR-frontend/static/media/documentAnalysis.88eb46eec9ac597ced34.png",
+    "static/media/pdfConversion.png": "/OCR-frontend/static/media/pdfConversion.7bcf4078a3cd61a3bcb1.png",
+    "static/media/tableExtraction.png": "/OCR-frontend/static/media/tableExtraction.ce7d635eccac6d6b0c1f.png",
+    "index.html": "/OCR-frontend/index.html",
+    "main.03a5ec2a.css.map": "/OCR-frontend/static/css/main.03a5ec2a.css.map",
+    "main.2696f668.js.map": "/OCR-frontend/static/js/main.2696f668.js.map",
+    "453.2b06451f.chunk.js.map": "/OCR-frontend/static/js/453.2b06451f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.03a5ec2a.css",
+    "static/js/main.2696f668.js"
+  ]
+}
