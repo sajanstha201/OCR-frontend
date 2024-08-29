@@ -23,10 +23,10 @@ export function Register(){
             return false;
         }
         var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/;
-        if(!regex.test(pass1)){
-            showAlert('password should have 1 special char, 1 upper char, 1 lower char and 1 digit','red')
-            return false;
-        }
+        // if(!regex.test(pass1)){
+        //     showAlert('password should have 1 special char, 1 upper char, 1 lower char and 1 digit','red')
+        //     return false;
+        // }
         return true;
     }
     const change_eyeStatus=()=>{
@@ -55,13 +55,18 @@ export function Register(){
             setIsRegistered(true)
         }
         catch(error){
-            const error_dict=error.response.data
-            if('username' in error_dict && 'email' in error_dict) showAlert(error.response.data['username']+' and '+error.response.data['email'],'red')
-            else if('username' in error_dict) showAlert(error_dict['username'],'red')
-            else showAlert(error_dict['email'],'red')
+            try{
+                const error_dict=error.response.data
+                if('username' in error_dict && 'email' in error_dict) showAlert(error.response.data['username']+' and '+error.response.data['email'],'red')
+                else if('username' in error_dict) showAlert(error_dict['username'],'red')
+                else showAlert(error_dict['email'],'red')
+            }
+            catch(error){
+                showAlert('something went wrong','red')
+            }
+
         }
         finally{
-            showAlert('Check You Email For Verification','green')
             activate_loader(false)
         }
     }
