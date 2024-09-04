@@ -56,7 +56,7 @@ function DocumentAnalysis(){
     }
     return(
         <>
-            <h1 className='mt-4 text-xxl text-bold'>Document Analysis</h1>
+            <h1 className='mt-4 text-xxl text-bold'>Image to Word</h1>
             {files.result.length===0&&<Upload featureName={'document-analysis'} files={files} setFiles={setFiles}></Upload>}
             {(files.result.length===0&&files.inputFiles.length!==0)&&<Button variant="success" size='lg' onClick={documentAnalysis} className="mt-4">Analyze</Button>}
             {files.result.length!==0&&

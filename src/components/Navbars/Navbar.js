@@ -30,11 +30,11 @@ export const Navbar=()=>{
             <NavbarB.Toggle aria-controls="basic-navbar-nav" />
             <NavbarB.Collapse id="basic-navbar-nav" >
                 <Nav className="me-auto" >
-                    <NavItemWithIcon to={'/pdf-conversion'} icon={<AiOutlineFilePdf/>} currentPath={loc}>Pdf Conversion</NavItemWithIcon>
+                    <NavItemWithIcon to={'/pdf-conversion'} icon={<AiOutlineFilePdf/>} currentPath={loc}>Image to Pdf</NavItemWithIcon>
                     {userInfo.isLogin&&(<>
                         <NavItemWithIcon to={'/table-extraction'} icon={<AiOutlineTable/>} currentPath={loc}>Table Extraction</NavItemWithIcon>
-                        <NavItemWithIcon to={'/document-analysis'} icon={<AiOutlineFileText/>} currentPath={loc}>Document Analysis</NavItemWithIcon>
-                        <NavItemWithIcon to={'/image-conversion'} icon={<AiOutlinePicture/>} currentPath={loc}>ImageConversion</NavItemWithIcon>
+                        <NavItemWithIcon to={'/document-analysis'} icon={<AiOutlineFileText/>} currentPath={loc}>Image to Word</NavItemWithIcon>
+                        <NavItemWithIcon to={'/image-conversion'} icon={<AiOutlinePicture/>} currentPath={loc}>Pdf to Image</NavItemWithIcon>
                     </>
                     )}
                 <NavItemWithIcon to={'/about-us'} icon={<FontAwesomeIcon icon={ faInfoCircle} />} currentPath={loc}>About Us</NavItemWithIcon>

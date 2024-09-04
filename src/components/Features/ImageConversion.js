@@ -33,7 +33,7 @@ export const ImageConversion=()=>{
     }
     return(
         <>
-        <h1 className='mt-4 text-xxl text-bold'>Image Conversion</h1>
+        <h1 className='mt-4 text-xxl text-bold'>Pdf to Image</h1>
         {files.result.length===0?<>
             <Upload featureName={'imageConversion'} files={files} setFiles={setFiles}></Upload>
             <Button variant="success" size='lg' className="mt-4" onClick={convertToImage}>Convert</Button>
