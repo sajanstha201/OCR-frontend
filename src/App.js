@@ -28,7 +28,6 @@ function App() {
   const baseUrl=useSelector((state)=>state.baseUrl).backend
   useEffect(()=>{
     try{
-      localStorage.setItem('token','lasdjkf')
       if(localStorage.getItem('token')){
         dispatch(setToken(localStorage.getItem('token')))
         dispatch(setIsLogin(true))

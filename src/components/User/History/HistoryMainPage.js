@@ -23,18 +23,19 @@ export const HistoryMainPage=()=>{
     }
     return(
         <div className="bg-gray-100">
+            <h1>History</h1>
             <div className="flex flex-row md:pl-60 md:pr-60 h-[60px] items-center justify-center bg-blue-100 cursor-pointer pt-1">
                 <div onClick={()=>setWhichHistory('pdfConversion')} className={`${whichHistory==='pdfConversion'?'bg-gray-100 border-1 border-t-black border-x-black':''} h-full pt-2 px-2 flex items-center rounded-t-xl`}>
-                    PDF Conversion History
+                    Image to Pdf
                 </div>
                 <div onClick={()=>{setWhichHistory('tableExtraction')}} className={`${whichHistory==='tableExtraction'?'bg-gray-100 border-1 border-t-black border-x-black':''} h-full pt-2 px-2 flex items-center rounded-t-xl`}>
-                    Table Extraction History
+                    Table Extraction 
                 </div>
                 <div onClick={()=>{setWhichHistory('documentAnalysis')}} className={`${whichHistory==='documentAnalysis'?'bg-gray-100 border-1 border-t-black border-x-black':''} h-full pt-2 px-2 flex items-center rounded-t-xl`}>
-                    Document Analysis History
+                    Image to Word 
                 </div>
                 <div onClick={()=>{setWhichHistory('imageConversion')}} className={`${whichHistory==='imageConversion'?'bg-gray-100 border-1 border-t-black border-x-black':''} h-full pt-2 px-2 flex items-center rounded-t-xl`}>
-                    Image Conversion History
+                    Pdf to Image 
                 </div>
             </div>
             <div className="flex justify-center">
