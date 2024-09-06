@@ -2,7 +2,6 @@ import * as XLSX from 'xlsx'
 import { showAlert } from '../AlertLoader';
 export const DownloadExcel=(excelData,name)=>{
     try{
-        console.log(excelData)
         const worksheets=[];
         Object.keys(excelData).map((key)=>{
             const dataArray=Object.values(excelData[key]).map((row)=>row)

@@ -12,28 +12,26 @@ export const DisplayExcel=()=>{
     const queryParameters=new URLSearchParams(loc.search)
     const file=queryParameters.get('file')
     const fileName=queryParameters.get('fileName')||'table_extraction.xlsx'
-    const [excelName,setExcelName]=useState('')
-    useEffect(()=>{
-        try{
-            const fetchData= async()=>{
-                try{
-                const response=await axios.get(file)
-                const responseData=response.data
-                const tableData={};
-                responseData.forEach((value,index)=>tableData[index]=value);
-                setExcelData(responseData)
-                }
-                catch(error){
-                    showAlert(error,'red')
-                    console.log(error)
-                }
+    useEffect(() => {
+    
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(file);
+                const responseData = response.data;
+                const tableData = {};
+                responseData.forEach((value, index) => tableData[index] = value);
+                setExcelData(responseData);
+            } catch (error) {
+                showAlert(error, 'red');
+                console.log(error);
             }
+        };
+    
+        if (file) {
             fetchData();
         }
-        catch(error){
-            console.log(error)
-        }   
-    },[]);
+    }, [file, fileName]);
+    
     return (
         <>
         <div id='display-excel'>

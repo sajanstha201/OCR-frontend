@@ -6,7 +6,8 @@ export const baseUrlSlice=createSlice({
         // 'backend':'http://192.168.1.140:8000/',
         // 'backend':'http://192.168.1.65:8000/',
         'backend':'https://goodwish.com.np/',
-        'frontend':'http://localhost:3000/'
+        // 'frontend':'http://localhost:3000/OCR-frontend/'
+        'frontend':'https://sajanstha201.github.io/OCR-frontend/'
     },
     reducers:{
     }

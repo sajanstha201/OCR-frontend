@@ -6,7 +6,6 @@ export const ShowDownloadView=({featureName,downloadData,setFiles,ViewFunction,D
         <div className="w-[100px] h-[100px] rounded-full p-6 pr-8 flex items-center justify-center">
         <FontAwesomeIcon icon={faBackward} size='4x' className='text-blue-500' 
         onClick={()=>setFiles(prevData=>({...prevData,result:[]}))}>
-
         </FontAwesomeIcon>
         </div>
         <div className='flex items-center justify-center h-[15%] w-[30%] border text-[35px] cursor-pointer hover:h-[16%] hover:w-[31%]  font-bold text-white bg-blue-500 shadow-lg rounded-full transition duration-300 ease-in-out' 

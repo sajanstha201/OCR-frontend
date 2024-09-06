@@ -25,6 +25,7 @@ export function PdfConversion() {
                 const response = await axios.post(baseUrl + 'api/scanned-files/', imageFormData, {
                     headers: { 'Authorization': userProfile.token }
                 });
+                console.log(response.data)
                 setResultDetail(response.data);
                 setFiles(prevData=>({...prevData,name:response.data.file.split('/').pop()}))
                 const pdfResponse = await axios.get(baseUrl + response.data.file.substring(1) + '/', {
@@ -33,12 +34,8 @@ export function PdfConversion() {
                 setFiles(prevData=>({...prevData,result:[pdfResponse.data]}))
             }
             else{
-                const response=await axios.post(baseUrl+'api/guest-scanned-files/',imageFormData,{
-                    'cookies':localStorage.getItem("cookies")
-                })
+                const response=await axios.post(baseUrl+'api/guest-scanned-files/',imageFormData)
                 setResultDetail(response.data);
-                console.log(response)
-                localStorage.setItem('cookies',response.data.cookies)
                 const pdfResponse = await axios.get(baseUrl + response.data.file.substring(1) + '/',);
                 setFiles(prevData=>({...prevData,result:[pdfResponse.data]}))
             }
@@ -57,7 +54,7 @@ export function PdfConversion() {
             const pdfBlob = new Blob([files.result[0]], { type: 'application/pdf' });
             if(pdfBlob){
                 const urlObject = URL.createObjectURL(pdfBlob);
-                newWin.location.href=`/display-pdf?file=${encodeURIComponent(urlObject)}`
+                newWin.location.href=`${frontendBaseUrl}#/display-pdf?file=${encodeURIComponent(urlObject)}`
                 newWin.focus();
             }
             else{
@@ -71,7 +68,7 @@ export function PdfConversion() {
     
     return (
         <div>
-            <h1 className='mt-4 text-xxl text-bold'>Pdf to Image</h1>
+            <h1 className='mt-4 text-xxl text-bold'>Image to Pdf</h1>
             {files.result.length===0&&<Upload featureName={'pdf-conversion'} files={files} setFiles={setFiles}></Upload>}
             {files.inputFiles.length!==0&&
                     <>

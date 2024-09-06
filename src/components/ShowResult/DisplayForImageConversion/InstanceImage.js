@@ -19,9 +19,6 @@ export const InstanceImage=({index,imageData})=>{
             const getImage=async()=>{
                 try{
                     const response=await axios.get(baseUrl+imageData.image.substr(1),{
-                        headers:{
-                            'Authorization':userInfo.token
-                        },
                         responseType:'arraybuffer'
                     })
                     const responseBlob=new Blob([response.data],{type:'image/png'})

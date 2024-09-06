@@ -27,7 +27,6 @@ export function TableExtraction(){
             files.inputFiles.forEach(file => imageFormData.append('image', file));
             const response=await axios.post(baseUrl+'api/images/',imageFormData,{headers:{ 'Authorization': userInfo.token }})
             setFiles(prevData=>({...prevData,name:userInfo.username+response.data.images.created+'.xlsx'}))
-            console.log(response.data)
             setFiles(prevData=>({...prevData,result:[response.data.imagedata]}))
         }
         catch(error){
@@ -43,22 +42,20 @@ export function TableExtraction(){
             activate_loader(false)
         }
     }
-    const viewTable=()=>{
-        try{
-            const newWin=window.open(frontendBaseUrl+'blank');
-            const pdfBlob = new Blob([JSON.stringify(files.result[0])], { type: 'application/pdf' });
-            if(pdfBlob){
-                const urlObject = URL.createObjectURL(pdfBlob);
-                newWin.location.href=`/display-excel?file=${encodeURIComponent(urlObject)}&fileName=${encodeURIComponent(files.name)}`
+    const viewTable = () => {
+        try {
+            const newWin = window.open(frontendBaseUrl + 'blank');
+            const jsonBlob = new Blob([JSON.stringify(files.result[0])], { type: 'application/json' });
+            if (jsonBlob) {
+                const urlObject = URL.createObjectURL(jsonBlob);
+                newWin.location.href = `${frontendBaseUrl}#/display-excel?file=${encodeURIComponent(urlObject)}&fileName=${encodeURIComponent(files.name)}`
                 newWin.focus();
             }
+        } catch (error) {
+            showAlert(error, 'red');
+            console.log(error);
         }
-        catch(error){
-            showAlert(error,'red')
-            console.log(error)
-        }
-        console.log(files)
-    }
+    };
     return(
         <>
          <h1 className='mt-4 text-xxl text-bold'>Table extraction</h1>

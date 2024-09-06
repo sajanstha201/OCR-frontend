@@ -20,7 +20,6 @@ export const ImageConversion=()=>{
                     'Authorization':userInfo.token
                 }
             })
-            console.log(response.data)
             setFiles(prevData=>({...prevData,result:[...response.data.file.pages]}))
         }
         catch(error){

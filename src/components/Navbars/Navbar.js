@@ -10,7 +10,7 @@ import { NavItemWithIcon } from './NavItemWithIcon';
 export const Navbar=()=>{
     const userInfo=useSelector((state)=>state.userProfile)
     const loc=useLocation()
-    const path=['/login','/register']
+    const path=['/login','/register','display-excel','display-pdf']
     const isactive=path.includes(loc.pathname)
     if(isactive){
         return null;
