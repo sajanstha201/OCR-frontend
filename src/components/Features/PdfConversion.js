@@ -20,7 +20,6 @@ export function PdfConversion() {
         const imageFormData = new FormData();
         files.inputFiles.forEach(file => imageFormData.append('images', file));
         try {
-            console.log(userProfile)
             if(userProfile.isLogin){
                 const response = await axios.post(baseUrl + 'api/scanned-files/', imageFormData, {
                     headers: { 'Authorization': userProfile.token }
