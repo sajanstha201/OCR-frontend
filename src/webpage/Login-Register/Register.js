@@ -50,7 +50,7 @@ export function Register(){
             let csrf_token
             const response =await axios.get(base_url+'api/get-csrf-token/')
             csrf_token=response.data.csrf_token
-            const response2=axios.post(base_url+'api/users/',userInfo,{headers:{'X-CSRFToken': csrf_token}})
+            const response2=await axios.post(base_url+'api/users/',userInfo,{headers:{'X-CSRFToken': csrf_token}})
             showAlert('SuccessFully Registered. Go to your email for verification','green')
             setIsRegistered(true)
         }
